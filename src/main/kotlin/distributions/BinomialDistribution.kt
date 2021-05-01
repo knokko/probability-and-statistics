@@ -11,9 +11,9 @@ open class BinomialDistribution(val numTrials: Long, val successChance: Double):
             throw IllegalArgumentException("successChange ($successChance) must be between 0 and 1")
     }
 
-    override fun probabilityMass(numSuccesses: Long): Double {
-        if (numSuccesses > numTrials || numSuccesses < 0) return 0.0;
-        return choose(numTrials, numSuccesses) * successChance.pow(numSuccesses.toDouble()) * (1.0 - successChance).pow((numTrials - numSuccesses).toDouble())
+    override fun probabilityMass(score: Long): Double {
+        if (score > numTrials || score < 0) return 0.0;
+        return choose(numTrials, score) * successChance.pow(score.toDouble()) * (1.0 - successChance).pow((numTrials - score).toDouble())
     }
 
     override val expected: Double

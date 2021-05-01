@@ -2,7 +2,7 @@ package distributions
 
 interface DiscreteDistribution {
 
-    fun probabilityMass(numSuccesses: Long): Double
+    fun probabilityMass(score: Long): Double
 
     val expected: Double
 
