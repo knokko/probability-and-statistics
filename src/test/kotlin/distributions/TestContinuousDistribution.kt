@@ -22,4 +22,21 @@ class TestContinuousDistribution {
         assertEquals(0.8536, dist2.chanceBetween(lowerBound = -0.25 * PI), 0.001)
         assertEquals(1.0, dist2.chanceBetween(), 0.001)
     }
+
+    @Test
+    fun testProperties() {
+        val dist1 = ContinuousDistribution({ x -> 1.5 * x * x }, -1.0, 1.0)
+        assertEquals(0.0, dist1.mean, 0.001)
+        assertEquals(0.6, dist1.variance, 0.001)
+        assertEquals(0.7746, dist1.standardDeviation, 0.001)
+
+        val dist2 = ContinuousDistribution({ x -> 0.125 * x }, 0.0, 4.0)
+        assertEquals(8.0 / 3.0, dist2.mean, 0.001)
+        assertEquals(8.0 / 9.0, dist2.variance, 0.001)
+        assertEquals(0.9428, dist2.standardDeviation, 0.001)
+
+        val dist3 = ContinuousDistribution({x -> 600.0 / x / x }, 100.0, 120.0)
+        assertEquals(109.3929, dist3.mean, 0.001)
+        assertEquals(33.1858, dist3.variance, 0.001)
+    }
 }
