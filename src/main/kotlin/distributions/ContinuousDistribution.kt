@@ -35,6 +35,6 @@ open class ContinuousDistribution(val f: (Double) -> Double, val lowerBound: Dou
         computeIntegral({ x -> (x - mean) * (x - mean) * f(x)}, lowerBound, upperBound)
     }
 
-    val standardDeviation: Double
+    open val standardDeviation: Double
         get() = sqrt(variance)
 }
