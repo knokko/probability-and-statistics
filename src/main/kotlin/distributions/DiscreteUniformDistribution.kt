@@ -2,7 +2,7 @@ package distributions
 
 import kotlin.math.pow
 
-class UniformDistribution(val minValue: Long, val maxValue: Long): DiscreteDistribution {
+class DiscreteUniformDistribution(val minValue: Long, val maxValue: Long): DiscreteDistribution {
 
     override fun probabilityMass(score: Long): Double {
         return if (score in minValue..maxValue) {
