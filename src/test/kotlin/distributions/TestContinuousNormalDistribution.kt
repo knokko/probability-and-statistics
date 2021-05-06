@@ -7,7 +7,7 @@ class TestContinuousNormalDistribution {
 
     @Test
     fun testChanceBetween() {
-        val standard = ContinuousNormalDistribution(0.0, 1.0)
+        val standard = StandardNormalDistribution
         assertEquals(0.9066, standard.chanceBetween(upperBound = 1.32), 0.0001)
         assertEquals(0.9987, standard.chanceBetween(upperBound = 3.0), 0.0001)
         assertEquals(0.0735, standard.chanceBetween(lowerBound = 1.45), 0.0001)
@@ -23,7 +23,7 @@ class TestContinuousNormalDistribution {
 
     @Test
     fun testProperties() {
-        val standard = ContinuousNormalDistribution(0.0, 1.0)
+        val standard = StandardNormalDistribution
         assertEquals(0.0, standard.mean, 0.001)
         assertEquals(1.0, standard.variance, 0.001)
         assertEquals(1.0, standard.standardDeviation, 0.001)

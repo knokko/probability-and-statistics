@@ -11,3 +11,5 @@ class ContinuousNormalDistribution(override val mean: Double, override val stand
     override val variance: Double
         get() = standardDeviation * standardDeviation
 }
+
+val StandardNormalDistribution = ContinuousNormalDistribution(0.0, 1.0)
