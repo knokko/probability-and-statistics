@@ -2,8 +2,9 @@ package distributions
 
 import kotlin.math.exp
 
+// In comparison to the book: mean = 1 / lambda
 class ExponentialDistribution(override val mean: Double): ContinuousDistribution(
-    { x -> mean * exp(-mean * x)}, 0.0
+    { x -> exp(-x / mean) / mean}, 0.0
 ) {
 
     override fun chanceBetween(lowerBound: Double?, upperBound: Double?): Double {
