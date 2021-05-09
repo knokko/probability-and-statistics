@@ -19,17 +19,19 @@ inline fun computeIntegral(f: (Double) -> Double, lowerBound: Double? = null, up
 inline fun computeUnboundedPositiveIntegral(f: (Double) -> Double, lowerBound: Double = 0.0): Double {
     return computeBoundedIntegral(f, lowerBound, lowerBound + 10.0, 50_000) +
             computeBoundedIntegral(f, lowerBound + 10.0, lowerBound + 110.0, 50_000) +
-            computeBoundedIntegral(f, lowerBound + 110.0, lowerBound + 1000.0, 25_000) +
-            computeBoundedIntegral(f, lowerBound + 1000.0, lowerBound + 10_000.0, 15_000) +
-            computeBoundedIntegral(f, lowerBound + 10_000.0, lowerBound + 1_000_000.0, 10_000)
+            computeBoundedIntegral(f, lowerBound + 110.0, lowerBound + 1000.0, 50_000) +
+            computeBoundedIntegral(f, lowerBound + 1000.0, lowerBound + 10_000.0, 50_000) +
+            computeBoundedIntegral(f, lowerBound + 10_000.0, lowerBound + 100_000.0, 50_000) +
+            computeBoundedIntegral(f, lowerBound + 100_000.0, lowerBound + 1_000_000.0, 50_000)
 }
 
 inline fun computeUnboundedNegativeIntegral(f: (Double) -> Double, upperBound: Double = 0.0): Double {
     return computeBoundedIntegral(f, upperBound - 10.0, upperBound, 50_000) +
             computeBoundedIntegral(f, upperBound - 110.0, upperBound - 10.0, 50_000) +
-            computeBoundedIntegral(f, upperBound - 1000.0, upperBound - 110.0, 25_000) +
-            computeBoundedIntegral(f, upperBound - 10_000.0, upperBound - 1000.0, 15_000) +
-            computeBoundedIntegral(f, upperBound - 1_000_000.0, upperBound - 10_000.0, 10_000)
+            computeBoundedIntegral(f, upperBound - 1000.0, upperBound - 110.0, 50_000) +
+            computeBoundedIntegral(f, upperBound - 10_000.0, upperBound - 1000.0, 50_000) +
+            computeBoundedIntegral(f, upperBound - 100_000.0, upperBound - 10_000.0, 50_000) +
+            computeBoundedIntegral(f, upperBound - 1_000_000.0, upperBound - 100_000.0, 50_000)
 }
 
 inline fun computeBoundedIntegral(
